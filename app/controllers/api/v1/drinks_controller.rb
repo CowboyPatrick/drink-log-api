@@ -1,5 +1,6 @@
 class Api::V1::DrinksController < Api::V1::BaseController
-  before_action :set_drink, only: [ :show ]
+  acts_as_token_authentication_handler_for User, except: [ :index, :show ]
+  before_action :set_drink, only: [ :show, :update ]
 
   def index
     @drinks = policy_scope(Drink)
@@ -8,10 +9,27 @@ class Api::V1::DrinksController < Api::V1::BaseController
   def show
   end
 
+  def update
+    if @drink.update(drink_params)
+      render :show
+    else
+      render_error
+    end
+  end
+
   private
+
+  def drink_params
+    params.require(:drink).permit(:name, :category)
+  end
 
   def set_drink
     @drink = Drink.find(params[:id])
     authorize @drink
+  end
+
+  def render_error
+    render json: { errors: @drink.errors.full_messages },
+      status: :unprocessable_entity
   end
 end
