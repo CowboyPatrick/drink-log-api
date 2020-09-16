@@ -4,6 +4,6 @@
 json.extract! @drink, :id, :name, :category
 
 # TODO: Add this in to also extract reviews.  Change to @drink.reviews
-# json.comments @restaurant.comments do |comment|
-#   json.extract! comment, :id, :content
-# end
+json.reviews @drink.reviews do |review|
+  json.extract! review, :id, :content
+end
