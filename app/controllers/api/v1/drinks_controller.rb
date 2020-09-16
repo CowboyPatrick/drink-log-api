@@ -17,6 +17,17 @@ class Api::V1::DrinksController < Api::V1::BaseController
     end
   end
 
+  def create
+    @drink = Drink.new(drink_params)
+    @drink.user = current_user
+    authorize @drink
+    if @drink.save
+      render :show, status: :created
+    else
+      render_error
+    end
+  end
+
   private
 
   def drink_params
