@@ -1,9 +1,13 @@
 class Api::V1::DrinksController < Api::V1::BaseController
-  acts_as_token_authentication_handler_for User, except: [ :index, :show ]
+  acts_as_token_authentication_handler_for User
   before_action :set_drink, only: [ :show, :update, :destroy ]
 
   def index
     @drinks = policy_scope(Drink)
+    if user_signed_in?
+    else
+      redirect_to root_path
+    end
   end
 
   def show
