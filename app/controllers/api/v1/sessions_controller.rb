@@ -1,4 +1,5 @@
 class Api::V1::SessionsController < Devise::SessionsController
+  skip_before_action :verify_authenticity_token, only: :create
   before_action :sign_in_params, only: :create
   before_action :load_user, only: :create
   # sign in
@@ -21,11 +22,13 @@ class Api::V1::SessionsController < Devise::SessionsController
 
   private
   def sign_in_params
-    params.require(:sign_in).permit :email, :password
+    params.require(:user).permit(:email, :password)
   end
 
   def load_user
+    #TODO change back for authentifcation
     @user = User.find_for_database_authentication(email: sign_in_params[:email])
+    # user = User.find_by(email: sign_in_params[:email])
     if @user
       return @user
     else
