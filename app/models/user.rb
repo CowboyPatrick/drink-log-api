@@ -7,5 +7,5 @@ class User < ApplicationRecord
   has_many :drinks
   has_many :reviews
 
-  # acts_as_token_authenticatable
+  acts_as_token_authenticatable
 end
