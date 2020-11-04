@@ -34,6 +34,7 @@ gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
 gem 'pundit'
 gem 'rack-cors', :require => 'rack/cors'
+gem 'rest-client'
 gem 'simple_form'
 gem 'simple_token_authentication'
 
