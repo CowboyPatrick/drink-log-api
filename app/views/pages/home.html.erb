@@ -1,2 +1,19 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<nav>
+  <h1>Drink Log API</h1>
+</nav>
+<div class="container d-flex">
+  <div class="left">
+    <h2>ABOUT</h2>
+    <h3>Sign up</h3>
+    <h3>Sign in</h3>
+    <h3>New Drink</h3>
+    <h3>Delete Drink</h3>
+  </div>
+  <div class="right">
+    <div class="display-box">
+    </div>
+    <%= link_to get_request_path do  %>
+      <button type="button" class="btn btn-warning">Get Some Drinks</button>
+    <% end %>
+  </div>
+</div>
