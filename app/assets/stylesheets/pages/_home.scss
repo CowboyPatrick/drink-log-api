@@ -1,7 +1,11 @@
 // Specific CSS for your home-page
+body {
+  background-color: grey;
+}
 nav {
   background-color: orange;
   position: sticky;
+  margin-bottom: 0px;
 
   h1 {
 
@@ -10,4 +14,28 @@ nav {
     padding-top: 20px;
 
   }
+}
+
+.container {
+  height: 100vh;
+  background-color: ghostwhite;
+  margin-top: -10px;
+}
+
+.left {
+  flex: 50%;
+  flex-direction: column;
+  border-right: solid 2px black;
+}
+
+.right {
+  flex: 50%;
+  flex-direction: column;
+}
+
+.display-box {
+  width: 90%;
+  height: 500px;
+  background-color: blanchedalmond;
+  margin: auto;
 }
