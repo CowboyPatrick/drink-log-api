@@ -25,7 +25,6 @@ nav {
 .left {
   flex: 50%;
   flex-direction: column;
-  border-right: solid 2px black;
 }
 
 .right {
@@ -33,9 +32,24 @@ nav {
   flex-direction: column;
 }
 
-.display-box {
+.get-drinks {
+
+}
+
+#display-box {
   width: 90%;
   height: 500px;
-  background-color: blanchedalmond;
+  background-color: aliceblue;
   margin: auto;
+  box-shadow: 2px 2px #f8f8fe;
+  overflow: hidden;
+  overflow-y: scroll;
+  margin-top: 24px;
 }
+
+#right-button{
+  display: flex;
+  justify-content: center;
+  margin: 24px;
+}
+

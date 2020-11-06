@@ -3,17 +3,20 @@
 </nav>
 <div class="container d-flex">
   <div class="left">
-    <h2>ABOUT</h2>
-    <h3>Sign up</h3>
-    <h3>Sign in</h3>
-    <h3>New Drink</h3>
-    <h3>Delete Drink</h3>
+    <div class="mt-4">
+      <h2>ABOUT</h2>
+      <p>A simple API that allows one to log drinks.  There is a still a lot todo.</p>
+      <h3>Sign up</h3>
+      <h3>Sign in</h3>
+      <h3>New Drink</h3>
+      <h3>Delete Drink</h3>
+    </div>
   </div>
   <div class="right">
-    <div class="display-box">
+    <div id="display-box">
     </div>
-    <%= link_to get_request_path do  %>
-      <button type="button" class="btn btn-warning">Get Some Drinks</button>
-    <% end %>
+    <div id="right-button">
+      <button id="get-drinks" type="button" class="btn btn-warning">Get Some Drinks</button>
+    </div>
   </div>
 </div>
