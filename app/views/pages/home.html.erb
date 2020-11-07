@@ -5,15 +5,79 @@
   <div class="left">
     <div class="mt-4">
       <h2>ABOUT</h2>
-      <p>A simple API that allows one to log drinks.  There is a still a lot todo.</p>
-      <h3>Sign up</h3>
-      <h3>Sign in</h3>
-      <h3>New Drink</h3>
-      <h3>Delete Drink</h3>
+      <p>An API built on rails.  Users can keep a log of drinks and their category.</p>
+      <h3>Create an account</h3>
+      https://drink-log-backend.herokuapp.com/api/v1/sign_up
+      <div>
+        <p>POST</p>
+        <pre>
+        <code>
+          BODY: {
+          "user": {
+          "email":"abc@example.com",
+          "password":"password",
+          "password_confirmation":"password"
+            }
+          }
+        </code>
+        </pre>
+      </div>
+      <h3>Log In</h3>
+      https://drink-log-backend.herokuapp.com/api/v1/sign_in
+      <div>
+        <p>POST</p>
+        <pre>
+        <code>
+          BODY: {
+          "user": {
+          "email":"abc@example.com",
+          "password":"password",
+            }
+          }
+        </code>
+        </pre>
+      </div>
+      <h3>Add a drink</h3>
+      https://drink-log-backend.herokuapp.com/api/v1/drinks
+      <div>
+        <p>POST</p>
+        <pre>
+        <code>
+        HEADERS: {
+            'Content-Type': 'application/json',
+            'X-User-Email': < user email >,
+            'X-User-Token': < user authentification token >
+        }
+        BODY: {
+            "name": "< drink name >",
+            "category": "< drink category >"
+        }
+        </code>
+        </pre>
+      </div>
+      <h3>Delete a drink</h3>
+      https://drink-log-backend.herokuapp.com/api/v1/drinks
+      <div>
+        <p>DELETE</p>
+        <pre>
+        <code>
+        HEADERS: {
+            'Content-Type': 'application/json',
+            'X-User-Email': < user email >,
+            'X-User-Token': < user authentification token >
+        }
+        BODY: {
+            "name": "< drink name >",
+            "category": "< drink category >"
+        }
+        </code>
+        </pre>
+      </div>
     </div>
   </div>
   <div class="right">
     <div id="display-box">
+      <p>Click the Button to show a get call.</p>
     </div>
     <div id="right-button">
       <button id="get-drinks" type="button" class="btn btn-warning">Get Some Drinks</button>

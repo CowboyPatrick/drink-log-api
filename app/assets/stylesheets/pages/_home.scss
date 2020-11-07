@@ -4,8 +4,10 @@ body {
 }
 nav {
   background-color: orange;
-  position: sticky;
   margin-bottom: 0px;
+  position: fixed;
+  top: 0;
+  width: 100%;
 
   h1 {
 
@@ -17,19 +19,21 @@ nav {
 }
 
 .container {
-  height: 100vh;
+  // height: 100vh;
   background-color: ghostwhite;
-  margin-top: -10px;
+  overflow: hidden;
 }
 
 .left {
   flex: 50%;
   flex-direction: column;
+  margin-top: 100px;
 }
 
 .right {
   flex: 50%;
   flex-direction: column;
+  margin-top: 100px;
 }
 
 .get-drinks {

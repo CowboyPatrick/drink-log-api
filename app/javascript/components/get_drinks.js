@@ -16,7 +16,7 @@ const setDrinks = () => {
 
 const appendData = (data) => {
   const display = document.getElementById('display-box')
-  console.log(data)
+  display.innerHTML = ""
   const formatted = new JSONFormatter(data)
   display.appendChild(formatted.render())
   // for (let i = 0; i < data.length; i++){
