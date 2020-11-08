@@ -2,11 +2,11 @@ import JSONFormatter from 'json-formatter-js'
 
 const setDrinks = () => {
   const drinkButton = document.getElementById("get-drinks")
-      fetch("http://localhost:3000/api/v1/drinks/", {
+      fetch("https://drink-log-backend.herokuapp.com/api/v1/drinks", {
         headers: {
             'Content-Type': 'application/json',
             'X-User-Email': "patrick@patrick.com",
-            'X-User-Token': "2feWfuuQsneu2DhtyAsi"
+            'X-User-Token': "pz3oRZ6sTWiUQs8e1aMA"
         }
     })
     .then(response => response.json())
