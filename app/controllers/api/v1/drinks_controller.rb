@@ -40,7 +40,7 @@ class Api::V1::DrinksController < Api::V1::BaseController
   private
 
   def drink_params
-    params.require(:drink).permit(:name, :category)
+    params.require(:drink).permit(:name, :category, :photo)
   end
 
   def set_drink
