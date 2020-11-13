@@ -31,6 +31,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'devise'
 
 gem 'autoprefixer-rails'
+gem 'cloudinary', '~> 1.16.0'
 gem 'font-awesome-sass'
 gem 'pundit'
 gem 'rack-cors', :require => 'rack/cors'
